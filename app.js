@@ -21,25 +21,30 @@ console.log("Buying");
 function Calculator(Buy,Quan,Curr){
 
     if (Buy < Curr){
-        Profit = (Buy-Curr)*Quan;
-        ProfitPercentage = (Buy/Curr)*Quan;
-        var Message = "You profit is $Profit and profit percentage is $ProfitPercentage";
-        ShowMessage(Message);
+        Profit = (Curr-Buy)*Quan;
+        ProfitPercentage = (Profit*100/Buy)*Quan;
+        var Message = "You profit is "+ Profit+" $ and profit percentage is "+ProfitPercentage;
+        var color = "green";
+        ShowMessage(Message,color);
     }else if(Buy > Curr){
         Loss = (Buy-Curr)*Quan;
-        LossPercentage = (Buy/Curr)*Quan;
-        var Message = "You Loss is $Loss and Loss percentage is $LossPercentage";
-        ShowMessage(Message);
+        LossPercentage = (Loss/Buy*100)*Quan;
+        var Message = "You Loss is "+Loss+" $ and Loss percentage is "+LossPercentage;
+        var color = "red";
+        ShowMessage(Message,color2);
     }else{
         var Message = "No Pain no gain";
-        ShowMessage(Message);
+        var color = "blue";
+        ShowMessage(Message,color1);
     }
 
 }
 
 
-function ShowMessage(message){
+function ShowMessage(message,colorOf){
 
  Output.innerText = message;   
+ console.log(colorOf);
+ Output.style.color = colorOf;
 
 }

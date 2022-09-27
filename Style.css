@@ -6,3 +6,15 @@
     width: 40%;
     margin-top:6rem;
 }
+
+
+input,label,button,p{
+    margin-top: 10px;
+    font-size: 20px;
+    padding: 10px;
+}
+
+button:hover{
+    background-color: rgb(79, 79, 226);
+    color:white;    
+}
