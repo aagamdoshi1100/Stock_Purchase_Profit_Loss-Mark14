@@ -14,8 +14,9 @@ function clickHandler(){
     var Q = quantity.value;
     var t = Currentprice.value;
 
+   
         Calculator(Buying,Q,t);
-
+   
    }
 
 
@@ -24,6 +25,7 @@ function Calculator(Buy,Quan,Curr){
 
     if (Buy != "" && Quan !="" && Curr !=""){
  
+        if(Buy > 0 && Q > 0 && t > 0){
 
     if (Buy < Curr){
         Profit = (Curr-Buy)*Quan;
@@ -43,7 +45,12 @@ function Calculator(Buy,Quan,Curr){
         var color = "blue";
         ShowMessage(Message,color);
     }
-}else{
+} else{
+    Output.style.color="Red";
+    Output.innerText="Please enter valid value. Value cannot be Negative";
+}
+    }
+else{
     var message = "Input fields cannot be null";
     var color = "#f54211";
     ShowMessage(message,color);
