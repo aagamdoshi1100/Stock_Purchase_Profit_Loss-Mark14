@@ -10,9 +10,9 @@ Btn.addEventListener("click",clickHandler);
 
 function clickHandler(){
 
-    var Buying = Buyprice.value;
-    var Q = quantity.value;
-    var t = Currentprice.value;
+    var Buying = Number(Buyprice.value);
+    var Q = Number(quantity.value);
+    var t = Number(Currentprice.value);
 
    
         Calculator(Buying,Q,t);
@@ -25,7 +25,7 @@ function Calculator(Buy,Quan,Curr){
 
     if (Buy != "" && Quan !="" && Curr !=""){
  
-        if(Buy > 0 && Q > 0 && t > 0){
+        if(Buy > 0 && Quan > 0 && Curr > 0){
 
     if (Buy < Curr){
         Profit = (Curr-Buy)*Quan;
@@ -34,8 +34,9 @@ function Calculator(Buy,Quan,Curr){
         var Message = "You profit is "+ Profit+" $ and profit percentage is "+ProfitPercentage;
         var color = "green";
         ShowMessage(Message,color);
-    }else if(Buy > Curr){
+    }else if(Curr < Buy){
         Loss = (Buy-Curr)*Quan;
+        console.log("ggg1");
         LossPercentage = (Loss/Buy*100)*Quan;
         var Message = "You Loss is "+Loss+" $ and Loss percentage is "+LossPercentage;
         var color = "red";
